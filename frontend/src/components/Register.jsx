@@ -60,16 +60,16 @@ export default function Register() {
             <div style={styles.cell}>
               <label>Name</label>
               <input
-type="text"
-placeholder="Enter Name"
-style={styles.input}
-value={form.name}
-onChange={(e) => {
-  const value = e.target.value;
+            type="text"
+            placeholder="Enter Name"
+            style={styles.input}
+           value={form.name}
+          onChange={(e) => {
+          const value = e.target.value;
 
   
-  if (/^[A-Za-z\s]*$/.test(value)) {
-    setForm({ ...form, name: value });
+     if (/^[A-Za-z\s]*$/.test(value)) {
+       setForm({ ...form, name: value });
   }
 }}
 />

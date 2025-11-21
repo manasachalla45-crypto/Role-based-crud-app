@@ -33,7 +33,7 @@ export default function Login() {
         else if (data.user_role === "manager") navigate("/manager");
         else navigate("/user");
       } else {
-        alert("Login succeeded but no token received");
+        alert("invalid authentication");
       }
     } catch (error) {
       console.error("Login error:", error);

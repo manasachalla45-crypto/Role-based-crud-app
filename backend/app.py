@@ -20,7 +20,7 @@ def get_db_connection():
         database="task1"
     )
 
-# ------------------- REGISTER -------------------
+#  REGISTER 
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json
@@ -54,7 +54,7 @@ def register():
         print("Database error:", err)
         return jsonify({"error": "Database connection error"}), 500
 
-# ------------------- LOGIN -------------------
+# LOGIN 
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -87,7 +87,7 @@ def login():
         print("Database error:", err)
         return jsonify({"error": "Database connection error"}), 500
 
-# ------------------- ADD CLIENT -------------------
+# ADD CLIENT
 @app.route('/clients', methods=['POST'])
 @jwt_required()
 def add_client():
@@ -114,7 +114,7 @@ def add_client():
         print("Database error:", err)
         return jsonify({"error": "Failed to add client"}), 500
 
-# ------------------- GET ALL CLIENTS -------------------
+# GET ALL CLIENTS 
 @app.route('/clients', methods=['GET'])
 @jwt_required()
 def get_clients():
@@ -130,7 +130,7 @@ def get_clients():
         print("Database error:", err)
         return jsonify({"error": "Database connection error"}), 500
 
-# ------------------- GET SINGLE CLIENT -------------------
+# GET SINGLE CLIENT 
 @app.route('/clients/<int:id>', methods=['GET'])
 @jwt_required()
 def get_single_client(id):
@@ -155,7 +155,7 @@ def get_single_client(id):
         print("Database error:", err)
         return jsonify({"error": "Database connection error"}), 500
 
-# ------------------- UPDATE CLIENT -------------------
+# UPDATE CLIENT 
 @app.route('/clients/<int:id>', methods=['PUT'])
 @jwt_required()
 def update_client(id):
@@ -182,7 +182,7 @@ def update_client(id):
         print("Database error:", err)
         return jsonify({"error": "Failed to update client"}), 500
 
-# ------------------- DELETE CLIENT -------------------
+# DELETE CLIENT 
 @app.route('/clients/<int:id>', methods=['DELETE'])
 @jwt_required()
 def delete_client(id):
@@ -204,6 +204,6 @@ def delete_client(id):
         print("Database error:", err)
         return jsonify({"error": "Failed to delete client"}), 500
 
-# ------------------- RUN APP -------------------
+# RUN APP 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
